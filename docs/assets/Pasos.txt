@@ -1,0 +1,41 @@
+
+
+Para instalar NGRX
+
+npm install @ngrx/store --save
+
+
+
+
+Se crea el archivo de acciones ya su vez otro archivo index.ts en la misma carpeta actions
+Se crea el archivo de reducers ya su vez otro archivo index.ts en la misma carpeta reducers
+
+Se crea el archivo store/app.reducer.ts
+
+en el app.module.ts
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/app.reducer';
+StoreModule.forRoot( appReducers ),
+
+Se instalan las devtools
+npm install @ngrx/store-devtools --save
+
+en el app.module.ts
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+
+Se instalan los efectos
+npm install @ngrx/effects --save
+
+Se crean los efectos en store/effects
+Se crea el archivo store/effects/index.ts
+
+en el app.module.ts
+import { EffectsModule } from '@ngrx/effects';
+import { effectsArr } from './store/effects';
+EffectsModule.forRoot( effectsArr ),
+
