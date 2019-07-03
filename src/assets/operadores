@@ -1,0 +1,6 @@
+import { map, switchMap, catchError } from 'rxjs/operators';
+switchMap: Recibe un observable y retorna otro.
+catchError: Permite controlar los errores en un observable
+
+import { of } from 'rxjs';
+of: Convierte en observable
